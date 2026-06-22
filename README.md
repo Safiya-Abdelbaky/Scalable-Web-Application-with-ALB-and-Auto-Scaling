@@ -7,6 +7,7 @@ To maintain a strict security posture, all compute and database resources are is
 
 ##  Architecture & Traffic Flow (How it Works)
 The system is designed following the AWS Well-Architected Framework. The request lifecycle flows as follows:
+<img width="2160" height="1251" alt="Blank diagram" src="https://github.com/user-attachments/assets/396a4236-b491-47ff-96db-503e2e953a0f" />
 
 1. **DNS & Edge Caching:** User requests are initially resolved by **Amazon Route 53**, which routes traffic to an **Amazon CloudFront** distribution. CloudFront caches static assets at edge locations to drastically reduce latency.
 2. **Security Inspection:** Dynamic requests pass through **AWS WAF**, which is configured with rules to inspect and mitigate common web vulnerabilities (e.g., OWASP Top 10, SQL injection, XSS).
